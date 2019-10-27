@@ -1,8 +1,8 @@
 #![feature(decl_macro, proc_macro_hygiene)]
 #[macro_use] extern crate rocket;
-extern crate diesel;
-extern crate serde_derive;
+#[macro_use] extern crate diesel;
 extern crate serde;
+#[macro_use] extern crate serde_derive;
 extern crate serde_json;
 extern crate dotenv;
 #[macro_use] extern crate rocket_contrib;
