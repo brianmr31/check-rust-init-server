@@ -35,3 +35,11 @@ pub fn not_found(req: &Request) -> ApiResponse {
         status: Status::NotFound,
     }
 }
+
+#[catch(422)]
+pub fn req_params_error(req: &Request) -> ApiResponse {
+    ApiResponse {
+        json: json!({"msg": format!("req unprocessable entity on {:?}",req.uri() ), "code": "ERR_422", "data": false}),
+        status: Status::UnprocessableEntity,
+    }
+}

@@ -20,6 +20,10 @@ fn main() {
         .mount("/version",
              routes![ version::handler::index])
         .register(
-            catchers![ core::core::internal_error, core::core::not_found])
+            catchers![
+                core::core::internal_error,
+                core::core::not_found,
+                core::core::req_params_error
+            ])
         .launch();
 }
